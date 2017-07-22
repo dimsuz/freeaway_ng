@@ -6,6 +6,8 @@
 
 / MainR GET
 
+/oldhome HomeR GET POST
+
 /comments CommentR POST
 
 /profile ProfileR GET
