@@ -1,3 +1,23 @@
+.hor-stripe {
+    background-color: white;
+    height: 16px;
+}
+
+.top-header {
+    height: 176px;
+    background: #ececec linear-gradient(to bottom, #ededed, #f7f7f7, #ededed);
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.band1 {
+    height: 16px;
+    background: linear-gradient(to right,#372f2d,#c5c3c4) no-repeat right;
+}
+
+
+// default scafoolding styles below
+
 .masthead,
 .navbar {
     background-color: rgb(27, 28, 29);
