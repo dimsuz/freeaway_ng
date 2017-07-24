@@ -1,10 +1,12 @@
-<div .container>
+<div .container .main-content>
+  <div .ver-stripe.ver-stripe-left>
+  <div .ver-stripe.ver-stripe-right>
   <div .row>
-  <div .col-md-12>
-    <div .hor-stripe>
-    <div .top-header>
-    <div .hor-stripe>
-    <div .band1>
+    <div .col-md-12>
+      <div .hor-stripe>
+      <div .top-header>
+      <div .hor-stripe>
+      <div .band1>
 
 <!-- Static navbar -->
 <nav .navbar.navbar-default.navbar-static-top>

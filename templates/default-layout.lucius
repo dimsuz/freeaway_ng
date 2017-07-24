@@ -10,6 +10,34 @@
     border-bottom: 1px solid #ddd;
 }
 
+@verStripeWidth: 20px;
+
+.ver-stripe {
+    width: #{verStripeWidth};
+    background: green;
+    height: 100%;
+    position: absolute;
+}
+
+.ver-stripe-left {
+    top: 0;
+    left: 0;
+}
+
+.ver-stripe-right {
+    top: 0;
+    right: 0;
+}
+
+.main-content {
+    position: relative;
+}
+
+.main-content .col-md-12 {
+    padding-left: #{verStripeWidth};
+    padding-right: #{verStripeWidth};
+}
+
 .band1 {
     height: 16px;
     background: linear-gradient(to right,#372f2d,#c5c3c4) no-repeat right;
