@@ -5,6 +5,7 @@
 
 .top-header {
     height: 176px;
+    position: relative;
     background: #ececec linear-gradient(to bottom, #ededed, #f7f7f7, #ededed);
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
@@ -36,6 +37,16 @@
 .ver-stripe-right {
     top: 0;
     right: 0;
+}
+
+.logo {
+    background: url(@{StaticR logo_png}) no-repeat;
+    width: 131px;
+    height: 106px;
+    position: absolute;
+    top: 50%;
+    margin-top: -53px;
+    margin-left: 36px;
 }
 
 .main-content {
