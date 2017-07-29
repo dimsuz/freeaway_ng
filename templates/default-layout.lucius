@@ -49,6 +49,32 @@
     margin-left: 36px;
 }
 
+.logo-title {
+    margin-left: 197px;
+    height: 91px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-top: -45.5px;
+
+    .main-title {
+        height: 52px;
+        background: url(@{StaticR free_away_png}) no-repeat;
+    }
+
+    .mid-title {
+        height: 2px;
+        margin: 10px 0;
+        background: linear-gradient(to right,#393230,#e6e5e5) no-repeat right;
+    }
+
+    .sub-title {
+        height: 17px;
+        background: url(@{StaticR subtitle_png}) no-repeat;
+    }
+}
+
 .main-content {
     position: relative;
 }
