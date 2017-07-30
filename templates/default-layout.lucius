@@ -89,6 +89,14 @@
     background: linear-gradient(to right,#372f2d,#c5c3c4) no-repeat right;
 }
 
+.button-bar {
+
+    .row {
+        padding-left: #{verStripeWidth};
+        padding-right: #{verStripeWidth};
+    }
+}
+
 
 // default scafoolding styles below
 
