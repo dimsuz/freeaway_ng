@@ -89,11 +89,24 @@
     background: linear-gradient(to right,#372f2d,#c5c3c4) no-repeat right;
 }
 
-.button-bar {
-
+.button-bar-container {
     .row {
         padding-left: #{verStripeWidth};
         padding-right: #{verStripeWidth};
+
+        .col-md-12 {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+.button-bar {
+    display: flex;
+    flex-flow: row wrap;
+
+    .btn {
+        flex-grow: 1;
     }
 }
 

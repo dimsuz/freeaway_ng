@@ -12,45 +12,40 @@
           <div .sub-title>
       <div .hor-stripe>
       <div .band1>
-<div .container .main-content .button-bar>
+<div .container .main-content .button-bar-container>
   <div .ver-stripe.ver-stripe-left>
   <div .ver-stripe.ver-stripe-right>
   <div .row>
-    <div .col-md-2>
-      <button type="button" .btn.btn-default>
-          Главная
-    <div .col-md-2>
-      <button type="button" .btn.btn-default>
-        О Формации
-    <div .col-md-2>
-      <button type="button" .btn.btn-default>
-        Мастер Формации
-    <div .col-md-2>
-      <button type="button" .btn.btn-default>
-        Расписание встреч
-    <div .col-md-2>
-      <div .btn-group>
-        <button type="button" .btn.btn-default.dropdown-toggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Публикации
-        <ul .dropdown-menu>
-          <li>
-            <a href="#">Мастера Формации
-          <li>
-            <a href="#">Участников Формации
-    <div .col-md-2>
-      <div .btn-group>
-        <button type="button" .btn.btn-default.dropdown-toggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Творчество
-        <ul .dropdown-menu>
-          <li>
-            <a href="#">Поэзия
-          <li>
-            <a href="#">Живопись
-          <li>
-            <a href="#">Янтры и мандалы
-    <div .col-md-2>
-      <button type="button" .btn.btn-default>
-        Форум
+    <div .col-md-12>
+      <div .button-bar>
+        <div .btn.btn-default>
+            Главная
+        <div .btn.btn-default>
+          О Формации
+        <div .btn.btn-default>
+          Мастер Формации
+        <div .btn.btn-default>
+          Расписание встреч
+        <div .btn-group>
+          <div .btn.btn-default.dropdown-toggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Публикации
+          <ul .dropdown-menu>
+            <li>
+              <a href="#">Мастера Формации
+            <li>
+              <a href="#">Участников Формации
+        <div .btn-group>
+          <div .btn.btn-default.dropdown-toggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Творчество
+          <ul .dropdown-menu>
+            <li>
+              <a href="#">Поэзия
+            <li>
+              <a href="#">Живопись
+            <li>
+              <a href="#">Янтры и мандалы
+        <div .btn.btn-default>
+          Форум
 
 <!-- Static navbar -->
 <nav .navbar.navbar-default.navbar-static-top>
