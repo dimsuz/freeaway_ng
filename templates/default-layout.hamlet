@@ -1,4 +1,4 @@
-<div .container .main-content>
+<div .container>
   <div .ver-stripe.ver-stripe-left>
   <div .ver-stripe.ver-stripe-right>
   <div .row>
@@ -12,7 +12,7 @@
           <div .sub-title>
       <div .hor-stripe>
       <div .band1>
-<div .container .main-content .button-bar-container>
+<div .container .button-bar-container>
   <div .ver-stripe.ver-stripe-left>
   <div .ver-stripe.ver-stripe-right>
   <div .row>
@@ -46,6 +46,21 @@
               <a href="#">Янтры и мандалы
         <div .btn.btn-default>
           Форум
+
+<div .container .main-content>
+  <div .ver-stripe.ver-stripe-left>
+  <div .ver-stripe.ver-stripe-right>
+  <div .row>
+    <div .col-md-12>
+
+<footer>
+  <div .container>
+    <div .ver-stripe.ver-stripe-left>
+    <div .ver-stripe.ver-stripe-right>
+    <div .row>
+      <div .col-md-12>
+        <div .band2>
+        <div .footer>
 
 <!-- Static navbar -->
 <nav .navbar.navbar-default.navbar-static-top>

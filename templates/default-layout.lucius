@@ -75,11 +75,11 @@
     }
 }
 
-.main-content {
+.container {
     position: relative;
 }
 
-.main-content .col-md-12 {
+.container .col-md-12 {
     padding-left: #{verStripeWidth};
     padding-right: #{verStripeWidth};
 }
@@ -87,6 +87,11 @@
 .band1 {
     height: 16px;
     background: linear-gradient(to right,#372f2d,#c5c3c4) no-repeat right;
+}
+
+.band2 {
+    height: 16px;
+    background: linear-gradient(to right,#c5c3c4,#372f2d) no-repeat right;
 }
 
 .button-bar-container {
@@ -110,6 +115,16 @@
     }
 }
 
+.main-content {
+    min-height: 445px;
+}
+
+.footer {
+    background-color: #e6e6e6;
+    height: 53px;
+    border-top: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+}
 
 // default scafoolding styles below
 
