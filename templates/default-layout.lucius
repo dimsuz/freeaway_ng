@@ -1,3 +1,15 @@
+html, body, .wrap, .wrap .container {
+    height: 100%;
+}
+
+body {
+    background: #383838;
+}
+
+.wrap .container {
+    background: white;
+}
+
 .hor-stripe {
     background-color: white;
     height: 16px;
@@ -95,14 +107,12 @@
 }
 
 .button-bar-container {
-    .row {
-        padding-left: #{verStripeWidth};
-        padding-right: #{verStripeWidth};
+    padding-left: #{verStripeWidth};
+    padding-right: #{verStripeWidth};
 
-        .col-md-12 {
-            padding-left: 0;
-            padding-right: 0;
-        }
+    .col-md-12 {
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
