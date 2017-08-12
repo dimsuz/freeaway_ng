@@ -4,6 +4,7 @@ html, body, .wrap, .wrap .container {
 
 body {
     background: #383838;
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif
 }
 
 .wrap .container {
@@ -117,11 +118,44 @@ body {
 }
 
 .button-bar {
+    background: #fafafa linear-gradient(to bottom,#fafafa,#e8e8e8) repeat-x;
+    border-bottom: 1px solid #dadada;
     display: flex;
     flex-flow: row wrap;
 
     .btn {
         flex-grow: 1;
+    }
+
+    .btn-default, .dropdown-toggle.btn-default {
+        color: #777;
+        background: none;
+        font-weight: bold;
+        font-size: 14px;
+        text-shadow: 0 1px 0 #fff;
+        border-top: 0;
+        border-left: 1px solid white;
+        border-right: 1px solid #f2f2f2;
+        border-bottom: 2px solid #dadada;
+        border-radius: 0;
+    }
+    .btn-default:active:hover, .dropdown-toggle.btn-default:hover {
+        border-left: 1px solid white;
+        border-right: 1px solid #f2f2f2;
+    }
+    .btn-default:first-child, .btn-default:active:hover:first-child, .dropdown-toggle.btn-default:hover:first-child {
+        border-left: 0;
+    }
+    .btn-default:last-child, .btn-default:active:hover:last-child, .dropdown-toggle.btn-default:hover:last-child {
+        border-right: 0;
+    }
+    .btn-default:hover, .dropdown-toggle.btn-default:hover, .open > .dropdown-toggle {
+        color: #d86a2c;
+        border-bottom: 2px solid #efc1a6;
+        background: linear-gradient(to bottom,#fefbf9,#f7e2d4) repeat-x;
+    }
+    .btn-default.active {
+        border-bottom: 2px solid #d86a2c;
     }
 }
 
