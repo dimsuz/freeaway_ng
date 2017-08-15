@@ -36,11 +36,8 @@ data MenuItem = MenuItem
     { menuItemLabel :: Text
     , menuItemRoute :: Route App
     , menuItemAccessCallback :: Bool
+    , menuItemSubItems :: [MenuItem]
     }
-
-data MenuTypes
-    = NavbarLeft MenuItem
-    | NavbarRight MenuItem
 
 -- This is where we define all of the routes in our application. For a full
 -- explanation of the syntax, please see:
@@ -96,33 +93,104 @@ instance Yesod App where
 
         -- Define the menu items of the header.
         let menuItems =
-                [ NavbarLeft $ MenuItem
-                    { menuItemLabel = "Home"
-                    , menuItemRoute = HomeR
+                [ MenuItem
+                    { menuItemLabel = "Главная"
+                    , menuItemRoute = MainR
                     , menuItemAccessCallback = True
+                    , menuItemSubItems = []
                     }
-                , NavbarLeft $ MenuItem
-                    { menuItemLabel = "Profile"
-                    , menuItemRoute = ProfileR
-                    , menuItemAccessCallback = isJust muser
+                , MenuItem
+                    { menuItemLabel = "О Формации"
+                    , menuItemRoute = MainR
+                    , menuItemAccessCallback = True
+                    , menuItemSubItems = [ MenuItem
+                                           { menuItemLabel = "О Формации"
+                                           , menuItemRoute = MainR
+                                           , menuItemAccessCallback = True
+                                           , menuItemSubItems = []
+                                           }
+                                         , MenuItem
+                                           { menuItemLabel = "Устав Формации"
+                                           , menuItemRoute = MainR
+                                           , menuItemAccessCallback = True
+                                           , menuItemSubItems = []
+                                           }
+                                         , MenuItem
+                                           { menuItemLabel = "Правила вступления"
+                                           , menuItemRoute = MainR
+                                           , menuItemAccessCallback = True
+                                           , menuItemSubItems = []
+                                           }
+                                         ]
                     }
-                , NavbarRight $ MenuItem
-                    { menuItemLabel = "Login"
-                    , menuItemRoute = AuthR LoginR
-                    , menuItemAccessCallback = isNothing muser
+                , MenuItem
+                    { menuItemLabel = "Мастер Формации"
+                    , menuItemRoute = MainR
+                    , menuItemAccessCallback = True
+                    , menuItemSubItems = []
                     }
-                , NavbarRight $ MenuItem
-                    { menuItemLabel = "Logout"
-                    , menuItemRoute = AuthR LogoutR
-                    , menuItemAccessCallback = isJust muser
+                , MenuItem
+                    { menuItemLabel = "Расписание встреч"
+                    , menuItemRoute = MainR
+                    , menuItemAccessCallback = True
+                    , menuItemSubItems = []
                     }
+                , MenuItem
+                    { menuItemLabel = "Публикации"
+                    , menuItemRoute = MainR
+                    , menuItemAccessCallback = True
+                    , menuItemSubItems = [ MenuItem
+                                           { menuItemLabel = "Мастера Формации"
+                                           , menuItemRoute = MainR
+                                           , menuItemAccessCallback = True
+                                           , menuItemSubItems = []
+                                           }
+                                         , MenuItem
+                                           { menuItemLabel = "Участников Формации"
+                                           , menuItemRoute = MainR
+                                           , menuItemAccessCallback = True
+                                           , menuItemSubItems = []
+                                           }
+                                         ]
+                    }
+                , MenuItem
+                    { menuItemLabel = "Творчество"
+                    , menuItemRoute = MainR
+                    , menuItemAccessCallback = True
+                    , menuItemSubItems = [ MenuItem
+                                           { menuItemLabel = "Поэзия"
+                                           , menuItemRoute = MainR
+                                           , menuItemAccessCallback = True
+                                           , menuItemSubItems = []
+                                           }
+                                         , MenuItem
+                                           { menuItemLabel = "Живопись"
+                                           , menuItemRoute = MainR
+                                           , menuItemAccessCallback = True
+                                           , menuItemSubItems = []
+                                           }
+                                         , MenuItem
+                                           { menuItemLabel = "Янтры и мандалы"
+                                           , menuItemRoute = MainR
+                                           , menuItemAccessCallback = True
+                                           , menuItemSubItems = []
+                                           }
+                                         ]
+                    }
+                , MenuItem
+                    { menuItemLabel = "Форум"
+                    , menuItemRoute = MainR
+                    , menuItemAccessCallback = True
+                    , menuItemSubItems = []
+                    }
+                -- , MenuItem
+                --     { menuItemLabel = "Logout"
+                --     , menuItemRoute = AuthR LogoutR
+                --     , menuItemAccessCallback = isJust muser
+                --     }
                 ]
 
-        let navbarLeftMenuItems = [x | NavbarLeft x <- menuItems]
-        let navbarRightMenuItems = [x | NavbarRight x <- menuItems]
-
-        let navbarLeftFilteredMenuItems = [x | x <- navbarLeftMenuItems, menuItemAccessCallback x]
-        let navbarRightFilteredMenuItems = [x | x <- navbarRightMenuItems, menuItemAccessCallback x]
+        let filteredMenuItems = [x | x <- menuItems, menuItemAccessCallback x]
 
         -- We break up the default layout into two components:
         -- default-layout is the contents of the body tag, and
