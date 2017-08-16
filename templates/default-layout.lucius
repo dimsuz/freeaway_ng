@@ -157,6 +157,9 @@ body {
     .btn-default.active, .dropdown-toggle.btn-default.active {
         border-bottom: 2px solid #d86a2c;
     }
+    .btn-default.active, .btn-default {
+        box-shadow: none;
+    }
 }
 
 .main-content {
