@@ -139,14 +139,14 @@ body {
         border-bottom: 2px solid #dadada;
         border-radius: 0;
     }
-    .btn-default:active:hover, .dropdown-toggle.btn-default:hover {
+    .btn-default:active:hover, .dropdown-toggle.btn-default:hover, .btn-default.active:hover {
         border-left: 1px solid white;
         border-right: 1px solid #f2f2f2;
     }
-    .btn-default:first-child, .btn-default:active:hover:first-child, .dropdown-toggle.btn-default:hover:first-child {
+    > .btn-default:first-child, > .btn-default:active:hover:first-child, > .btn-default.active:first-child, > .dropdown-toggle.btn-default:hover:first-child {
         border-left: 0;
     }
-    .btn-default:last-child, .btn-default:active:hover:last-child, .dropdown-toggle.btn-default:hover:last-child {
+    > .btn-default:last-child, > .btn-default:active:hover:last-child, > .btn-default.active:last-child, > .dropdown-toggle.btn-default:hover:last-child {
         border-right: 0;
     }
     .btn-default:hover, .dropdown-toggle.btn-default:hover, .open > .dropdown-toggle {
