@@ -43,6 +43,12 @@ import Handler.Home
 import Handler.Main
 import Handler.Comment
 import Handler.Profile
+import Handler.About
+import Handler.Biography
+import Handler.Meetings
+import Handler.Articles
+import Handler.Art
+import Handler.Forum
 
 -- This line actually creates our YesodDispatch instance. It is the second half
 -- of the call to mkYesodData which occurs in Foundation.hs. Please see the

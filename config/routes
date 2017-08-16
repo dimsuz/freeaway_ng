@@ -5,6 +5,17 @@
 /robots.txt RobotsR GET
 
 / MainR GET
+/about AboutR GET
+/rules CharterR GET
+/join JoinRulesR GET
+/bio/NgoMa NgoMaBiographyR GET
+/meetings MeetingsR GET
+/articles/NgoMa NgoMaArticlesR GET
+/articles/members MemberArticlesR GET
+/poetry/all PoetryR GET
+/painting/all PaintingR GET
+/yantras/all YantrasR GET
+/forum ForumR GET
 
 /oldhome HomeR GET POST
 

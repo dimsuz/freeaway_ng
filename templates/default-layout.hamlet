@@ -18,7 +18,7 @@
         <div .button-bar>
           $forall MenuItem label route _ subItems <- filteredMenuItems
             $if null subItems
-              <div .btn.btn-default :Just route == mcurrentRoute:.active>
+              <a .btn.btn-default :Just route == mcurrentRoute:.active href="@{route}">
                 #{label}
             $else
               <div .btn-group>

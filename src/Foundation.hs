@@ -105,19 +105,19 @@ instance Yesod App where
                     , menuItemAccessCallback = True
                     , menuItemSubItems = [ MenuItem
                                            { menuItemLabel = "О Формации"
-                                           , menuItemRoute = MainR
+                                           , menuItemRoute = AboutR
                                            , menuItemAccessCallback = True
                                            , menuItemSubItems = []
                                            }
                                          , MenuItem
                                            { menuItemLabel = "Устав Формации"
-                                           , menuItemRoute = MainR
+                                           , menuItemRoute = CharterR
                                            , menuItemAccessCallback = True
                                            , menuItemSubItems = []
                                            }
                                          , MenuItem
                                            { menuItemLabel = "Правила вступления"
-                                           , menuItemRoute = MainR
+                                           , menuItemRoute = JoinRulesR
                                            , menuItemAccessCallback = True
                                            , menuItemSubItems = []
                                            }
@@ -125,13 +125,13 @@ instance Yesod App where
                     }
                 , MenuItem
                     { menuItemLabel = "Мастер Формации"
-                    , menuItemRoute = MainR
+                    , menuItemRoute = NgoMaBiographyR
                     , menuItemAccessCallback = True
                     , menuItemSubItems = []
                     }
                 , MenuItem
                     { menuItemLabel = "Расписание встреч"
-                    , menuItemRoute = MainR
+                    , menuItemRoute = MeetingsR
                     , menuItemAccessCallback = True
                     , menuItemSubItems = []
                     }
@@ -141,13 +141,13 @@ instance Yesod App where
                     , menuItemAccessCallback = True
                     , menuItemSubItems = [ MenuItem
                                            { menuItemLabel = "Мастера Формации"
-                                           , menuItemRoute = MainR
+                                           , menuItemRoute = NgoMaArticlesR
                                            , menuItemAccessCallback = True
                                            , menuItemSubItems = []
                                            }
                                          , MenuItem
                                            { menuItemLabel = "Участников Формации"
-                                           , menuItemRoute = MainR
+                                           , menuItemRoute = MemberArticlesR
                                            , menuItemAccessCallback = True
                                            , menuItemSubItems = []
                                            }
@@ -159,19 +159,19 @@ instance Yesod App where
                     , menuItemAccessCallback = True
                     , menuItemSubItems = [ MenuItem
                                            { menuItemLabel = "Поэзия"
-                                           , menuItemRoute = MainR
+                                           , menuItemRoute = PoetryR
                                            , menuItemAccessCallback = True
                                            , menuItemSubItems = []
                                            }
                                          , MenuItem
                                            { menuItemLabel = "Живопись"
-                                           , menuItemRoute = MainR
+                                           , menuItemRoute = PaintingR
                                            , menuItemAccessCallback = True
                                            , menuItemSubItems = []
                                            }
                                          , MenuItem
                                            { menuItemLabel = "Янтры и мандалы"
-                                           , menuItemRoute = MainR
+                                           , menuItemRoute = YantrasR
                                            , menuItemAccessCallback = True
                                            , menuItemSubItems = []
                                            }
@@ -179,7 +179,7 @@ instance Yesod App where
                     }
                 , MenuItem
                     { menuItemLabel = "Форум"
-                    , menuItemRoute = MainR
+                    , menuItemRoute = ForumR
                     , menuItemAccessCallback = True
                     , menuItemSubItems = []
                     }
@@ -218,6 +218,17 @@ instance Yesod App where
     isAuthorized FaviconR _ = return Authorized
     isAuthorized RobotsR _ = return Authorized
     isAuthorized (StaticR _) _ = return Authorized
+    isAuthorized AboutR _ = return Authorized
+    isAuthorized CharterR _ = return Authorized
+    isAuthorized JoinRulesR _ = return Authorized
+    isAuthorized NgoMaBiographyR _ = return Authorized
+    isAuthorized MeetingsR _ = return Authorized
+    isAuthorized NgoMaArticlesR _ = return Authorized
+    isAuthorized MemberArticlesR _ = return Authorized
+    isAuthorized PoetryR _ = return Authorized
+    isAuthorized PaintingR _ = return Authorized
+    isAuthorized YantrasR _ = return Authorized
+    isAuthorized ForumR _ = return Authorized
 
     isAuthorized ProfileR _ = isAuthenticated
 
