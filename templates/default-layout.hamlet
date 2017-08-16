@@ -16,34 +16,18 @@
     <div .row .button-bar-container>
       <div .col-md-12>
         <div .button-bar>
-          <div .btn.btn-default>
-              Главная
-          <div .btn.btn-default>
-            О Формации
-          <div .btn.btn-default>
-            Мастер Формации
-          <div .btn.btn-default>
-            Расписание встреч
-          <div .btn-group>
-            <div .btn.btn-default.dropdown-toggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Публикации
-            <ul .dropdown-menu>
-              <li>
-                <a href="#">Мастера Формации
-              <li>
-                <a href="#">Участников Формации
-          <div .btn-group>
-            <div .btn.btn-default.dropdown-toggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Творчество
-            <ul .dropdown-menu>
-              <li>
-                <a href="#">Поэзия
-              <li>
-                <a href="#">Живопись
-              <li>
-                <a href="#">Янтры и мандалы
-          <div .btn.btn-default>
-            Форум
+          $forall MenuItem label route _ subItems <- filteredMenuItems
+            $if null subItems
+              <div .btn.btn-default :Just route == mcurrentRoute:.active>
+                #{label}
+            $else
+              <div .btn-group>
+                <div .btn.btn-default.dropdown-toggle :anyWithCurrentRoute subItems:.active data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  #{label}
+                <ul .dropdown-menu>
+                  $forall MenuItem subLabel subRoute _ _ <- subItems
+                    <li>
+                      <a href="@{subRoute}">#{subLabel}
 
     <div .row .main-content>
       <div .col-md-12>
@@ -54,46 +38,6 @@
         <div .band2>
         <div .footer>
 
-<!-- TODO delete after I use it as an example for implementing navigation -->
-<!-- <\!-- Static navbar -\-> -->
-<!-- <nav .navbar.navbar-default.navbar-static-top> -->
-<!--     <div .container> -->
-<!--         <div .navbar-header> -->
-<!--             <button type="button" .navbar-toggle.collapsed data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> -->
-<!--                 <span class="sr-only">Toggle navigation</span> -->
-<!--                 <span class="icon-bar"></span> -->
-<!--                 <span class="icon-bar"></span> -->
-<!--                 <span class="icon-bar"></span> -->
-
-<!--         <div #navbar .collapse.navbar-collapse> -->
-<!--             <ul .nav.navbar-nav> -->
-<!--                 $forall MenuItem label route _ <- navbarLeftFilteredMenuItems -->
-<!--                     <li :Just route == mcurrentRoute:.active> -->
-<!--                         <a href="@{route}">#{label} -->
-
-<!--             <ul .nav.navbar-nav.navbar-right> -->
-<!--                 $forall MenuItem label route _ <- navbarRightFilteredMenuItems -->
-<!--                     <li :Just route == mcurrentRoute:.active> -->
-<!--                         <a href="@{route}">#{label} -->
-
-<!-- <\!-- Page Contents -\-> -->
-
-<!-- <div .container> -->
-<!--     $if not $ Just HomeR == mcurrentRoute -->
-<!--         <ul .breadcrumb> -->
-<!--             $forall bc <- parents -->
-<!--                 <li> -->
-<!--                     <a href="@{fst bc}">#{snd bc} -->
-
-<!--             <li .active>#{title} -->
-
-<!--     $maybe msg <- mmsg -->
-<!--       <div .alert.alert-info #message>#{msg} -->
+<!-- TODO delete after I use it as an example for adding a widget content -->
 
 <!-- ^{widget} -->
-
-<!-- <\!-- Footer -\-> -->
-<!-- <footer .footer> -->
-<!--     <div .container> -->
-<!--         <p .text-muted> -->
-<!--             #{appCopyright $ appSettings master} -->

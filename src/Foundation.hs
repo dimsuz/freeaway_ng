@@ -191,6 +191,9 @@ instance Yesod App where
                 ]
 
         let filteredMenuItems = [x | x <- menuItems, menuItemAccessCallback x]
+        let
+          anyWithCurrentRoute :: [MenuItem] -> Bool
+          anyWithCurrentRoute = any (\(MenuItem _ r _ _) -> Just r == mcurrentRoute)
 
         -- We break up the default layout into two components:
         -- default-layout is the contents of the body tag, and
