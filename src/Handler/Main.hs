@@ -10,4 +10,11 @@ import Import
 getMainR :: Handler Html
 getMainR = do
   defaultLayout $ do
-    $(widgetFile "mainpage")
+    master <- getYesod
+    let variable = getRandomImage master
+    $(widgetFile "mainpage_new")
+
+getRandomImage :: App -> FilePath
+getRandomImage master =
+  let staticDir = appStaticDir $ appSettings master
+  in staticDir </> "img"

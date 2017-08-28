@@ -30,7 +30,7 @@
                       <a href="@{subRoute}">#{subLabel}
 
     <div .row .main-content>
-      <div .col-md-12>
+      ^{widget}
 
     <div .row>
       <div .col-md-12>
@@ -38,6 +38,3 @@
         <div .band2>
         <div .footer>
 
-<!-- TODO delete after I use it as an example for adding a widget content -->
-
-<!-- ^{widget} -->
