@@ -20,3 +20,6 @@ executable gen-images-import
   build-depends:       base >= 4.7 && < 5
                      , turtle
                      , system-filepath
+                     , parsec
+                     , foldl
+                     , text
