@@ -10,7 +10,7 @@ import Import
 getAboutR :: Handler Html
 getAboutR = do
   defaultLayout $ do
-    $(widgetFile "mainpage")
+    $(widgetFile "about")
 
 getCharterR :: Handler Html
 getCharterR = do

@@ -1,8 +1,6 @@
 <div .wrap>
   <div .container>
-    <div .ver-stripe.ver-stripe-left>
-    <div .ver-stripe.ver-stripe-right>
-    <div .row>
+    <div .row .top-header-container>
       <div .col-md-12>
         <div .hor-stripe>
         <div .top-header>
@@ -32,7 +30,7 @@
     <div .row .main-content>
       ^{widget}
 
-    <div .row>
+    <div .row .footer-container>
       <div .col-md-12>
         <footer>
         <div .band2>

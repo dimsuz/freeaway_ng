@@ -4,16 +4,22 @@ html, body, .wrap, .wrap .container {
 
 body {
     background: #383838;
-    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
 }
 
 .wrap .container {
-    background: white;
+    background: #f0f0f0;
+    overflow: auto;
 }
 
 .hor-stripe {
     background-color: white;
     height: 16px;
+}
+
+.top-header-container .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .top-header {
@@ -40,16 +46,6 @@ body {
     background: -ms-linear-gradient(left, rgba(183,183,183,1) 0%, rgba(213,213,213,1) 35%, rgba(211,211,211,1) 70%, rgba(173,173,173,1) 100%);
     background: linear-gradient(to right, rgba(183,183,183,1) 0%, rgba(213,213,213,1) 35%, rgba(211,211,211,1) 70%, rgba(173,173,173,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7b7b7', endColorstr='#adadad', GradientType=1 );
-}
-
-.ver-stripe-left {
-    top: 0;
-    left: 0;
-}
-
-.ver-stripe-right {
-    top: 0;
-    right: 0;
 }
 
 .logo {
@@ -90,11 +86,14 @@ body {
 
 .container {
     position: relative;
+    padding-left: 0;
+    padding-right: 0;
 }
 
-.container .col-md-12 {
-    padding-left: #{verStripeWidth};
-    padding-right: #{verStripeWidth};
+.container > .row {
+    background-color: white;
+    margin-left: #{verStripeWidth};
+    margin-right: #{verStripeWidth};
 }
 
 .band1 {
@@ -108,9 +107,6 @@ body {
 }
 
 .button-bar-container {
-    padding-left: #{verStripeWidth};
-    padding-right: #{verStripeWidth};
-
     .col-md-12 {
         padding-left: 0;
         padding-right: 0;
@@ -164,6 +160,11 @@ body {
 
 .main-content {
     min-height: 445px;
+}
+
+.footer-container .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .footer {
