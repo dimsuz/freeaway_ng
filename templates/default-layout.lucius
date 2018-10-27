@@ -2,6 +2,13 @@ html, body, .wrap, .wrap .container {
     height: 100%;
 }
 
+h1 {
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 20px;
+    color: #ef632e;
+}
+
 body {
     background: #383838;
     font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
@@ -172,4 +179,17 @@ body {
     height: 53px;
     border-top: 1px solid #d5d5d5;
     border-bottom: 1px solid #d5d5d5;
+}
+
+.article-content {
+    font-size: 16px;
+
+    img.pull-left {
+        margin-right: 40px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        margin-top: 30px;
+    }
 }
