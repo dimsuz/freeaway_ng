@@ -78,6 +78,18 @@ executables:
     when:
     - condition: flag(library-only)
       buildable: false
+  seed:
+    main: Seed.hs
+    source-dirs: test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - freeaway-ng
+    when:
+    - condition: flag(library-only)
+      buildable: false
 
 # Test suite
 tests:
