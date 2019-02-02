@@ -3,33 +3,32 @@
 module Main where
 
 import Import
-import Model
-import qualified Control.Exception as Exception
+import Model()
 import Yesod.Default.Config2 (useEnv, loadYamlSettings)
 import Database.Persist.Sqlite              (sqlDatabase, wrapConnection, createSqlPool, runSqlPool)
 import qualified Database.Sqlite as Sqlite
 import Control.Monad.Logger (runStderrLoggingT)
-import Data.Yaml                   (decodeFileEither, ParseException, withText)
+import Data.Aeson (decode, (.:), withObject)
+import qualified Data.ByteString.Lazy as B
+import Data.Maybe (fromJust)
 
 instance FromJSON Expression where
-  parseJSON = withText "Expression" $ \t -> return (Expression t)
+  parseJSON = withObject "Expression" $ \o -> Expression <$> o .: "text"
 
 rawConnection :: Text -> IO Sqlite.Connection
 rawConnection = Sqlite.open
 
 loadExpressions :: MonadIO m => FilePath -> m [Expression]
 loadExpressions filepath = do
-  decodeResult <- liftIO $ decodeFileEither filepath
-  return $ either Exception.throw id decodeResult
-
-insertExpression :: MonadIO m => Expression -> ReaderT SqlBackend m ()
-insertExpression expr = insert_ expr
+  decodeResult <- liftIO $ decode <$> B.readFile filepath
+  return $ fromJust decodeResult
 
 seed :: MonadIO m => ReaderT SqlBackend m ()
 seed = do
   deleteWhere ([] :: [Filter Expression])
-  expressions <- loadExpressions "config/expressions.yml"
-  sequence_ $ map insert_ expressions
+  expressions <- loadExpressions "test/seed-data/exprs.json"
+  mapM_ insert_ expressions
+  liftIO $ putStrLn (pack ("Inserted " <> show (length expressions) <> " expressions"))
 
 main :: IO ()
 main = do
