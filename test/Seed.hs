@@ -9,8 +9,18 @@ import Database.Persist.Sqlite              (sqlDatabase, wrapConnection, create
 import qualified Database.Sqlite as Sqlite
 import Control.Monad.Logger (runStderrLoggingT)
 
+
 rawConnection :: Text -> IO Sqlite.Connection
 rawConnection = Sqlite.open
+
+insertExpression :: MonadIO m => Text -> ReaderT SqlBackend m ()
+insertExpression expr = insert_ $ Expression expr
+
+seed :: MonadIO m => ReaderT SqlBackend m ()
+seed = do
+  deleteWhere ([] :: [Filter Expression])
+  insertExpression "hello"
+  return ()
 
 main :: IO ()
 main = do
@@ -20,5 +30,5 @@ main = do
     useEnv
   sqliteConn <- rawConnection (sqlDatabase $ appDatabaseConf settings)
   pool <- runStderrLoggingT (createSqlPool (wrapConnection sqliteConn) 1)
-  runSqlPool (runMigration migrateAll) pool
+  runSqlPool ((runMigration migrateAll) >> seed) pool
   return ()
