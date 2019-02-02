@@ -15,7 +15,7 @@ extra-source-files:  README.md
 
 executable gen-images-import
   hs-source-dirs:      src
-  main-is:             GenImagesImport.hs
+  main-is:             RenameIds.hs
   default-language:    Haskell2010
   build-depends:       base >= 4.7 && < 5
                      , turtle
@@ -23,3 +23,5 @@ executable gen-images-import
                      , parsec
                      , foldl
                      , text
+                     , aeson
+                     , bytestring
