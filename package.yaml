@@ -87,6 +87,7 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - freeaway-ng
+    - filepath
     when:
     - condition: flag(library-only)
       buildable: false
