@@ -3,3 +3,4 @@
   <b>Image count #{imageCount}
   <br>
   <b>Expression count #{exprCount}
+  <img src="#{expressionImagePath image}" />
