@@ -1,6 +1,4 @@
 <!-- TODO rename to mainpage.hamlet after all other handlers use correct hamlet files -->
 <div .col-md-12>
-  <b>Image count #{imageCount}
-  <br>
   <b>Expression count #{exprCount}
   <img src="#{expressionImagePath image}" />

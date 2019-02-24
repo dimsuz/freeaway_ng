@@ -11,10 +11,10 @@ import System.Random (randomRIO)
 
 getMainR :: Handler Html
 getMainR = do
-  -- TODO selectKeys, take list length, select random key, then use selectFirst
-  imageCount <- runDB $ count ([] :: [Filter ExpressionImage])
-  imageIndex <- liftIO $ randomRIO (0, imageCount - 1)
-  images <- runDB $ selectList ([] :: [Filter ExpressionImage]) []
-  let (Entity _ image) = images L.!! imageIndex
+  imageKeys <- runDB $ selectKeysList ([] :: [Filter ExpressionImage]) []
+  when (null imageKeys) (sendResponseStatus status500 ("no images available" :: Text))
+  imageIndex <- liftIO $ randomRIO (0, length imageKeys - 1)
+  let imageKey = imageKeys L.!! imageIndex
+  image <- runDB $ get404 imageKey
   exprCount <- runDB $ count ([] :: [Filter Expression])
   defaultLayout $(widgetFile "mainpage_new")
