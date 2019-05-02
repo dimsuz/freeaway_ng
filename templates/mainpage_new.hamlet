@@ -1,16 +1,6 @@
 <!-- TODO rename to mainpage.hamlet after all other handlers use correct hamlet files -->
 <div .col-md-12 .expression-frame>
-  <div .expression-text>
-    <p>И никакой это не парадокс…<br/>
-    У “отдельного”, “обособленного” человека нет ни воли, ни выбора…<br/><br/>
-    Потому что такого человека — просто нет!..<br/>
-    Это всего лишь снящийся персонаж…<br/><br/>
-    Но и у Бога — его тоже нет!..<br/>
-    Так как ОН ОДИН ТОЛЬКО ЕСТЬ!..<br/>
-    И ОН ЕСТЬ — АБСОЛЮТНО ВСЕ!..<br/><br/>
-    Ни волю, ни выбор просто не на что направить…<br/><br/>
-    Ни в чем нет преимущества, вокруг – только ЭТО!..
-
+  <div .expression-text>#{preEscapedToMarkup $ expressionText expression}
   <div .expression-image>
     <div .expression-image-wrapper>
       <img src="#{expressionImagePath image}" />

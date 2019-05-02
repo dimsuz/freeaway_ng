@@ -11,10 +11,23 @@ import System.Random (randomRIO)
 
 getMainR :: Handler Html
 getMainR = do
-  imageKeys <- runDB $ selectKeysList ([] :: [Filter ExpressionImage]) []
-  when (null imageKeys) (sendResponseStatus status500 ("no images available" :: Text))
-  imageIndex <- liftIO $ randomRIO (0, length imageKeys - 1)
-  let imageKey = imageKeys L.!! imageIndex
-  image <- runDB $ get404 imageKey
+  image <- findRandomImage
+  expression <- findRandomExpr
   exprCount <- runDB $ count ([] :: [Filter Expression])
   defaultLayout $(widgetFile "mainpage_new")
+
+findRandomImage :: HandlerT App IO ExpressionImage
+findRandomImage = do
+  recordKeys <- runDB $ selectKeysList ([] :: [Filter ExpressionImage]) []
+  when (null recordKeys) (sendResponseStatus status500 ("no expressions available" :: Text))
+  recordIndex <- liftIO $ randomRIO (0, length recordKeys - 1)
+  let key = recordKeys L.!! recordIndex
+  runDB $ get404 key
+
+findRandomExpr :: HandlerT App IO Expression
+findRandomExpr = do
+  recordKeys <- runDB $ selectKeysList ([] :: [Filter Expression]) []
+  when (null recordKeys) (sendResponseStatus status500 ("no expressions available" :: Text))
+  recordIndex <- liftIO $ randomRIO (0, length recordKeys - 1)
+  let key = recordKeys L.!! recordIndex
+  runDB $ get404 key
