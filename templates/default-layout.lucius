@@ -167,6 +167,8 @@ body {
 
 .main-content {
     min-height: 445px;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer-container .col-md-12 {

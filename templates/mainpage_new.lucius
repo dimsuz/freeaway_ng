@@ -1,0 +1,23 @@
+.expression-frame {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.expression-text {
+    flex: 0 0 auto;
+}
+
+.expression-image {
+    flex: 1 1 auto;
+
+    .expression-image-wrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
