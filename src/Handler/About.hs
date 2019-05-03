@@ -15,7 +15,7 @@ getAboutR = do
 getCharterR :: Handler Html
 getCharterR = do
   defaultLayout $ do
-    $(widgetFile "mainpage")
+    $(widgetFile "charter")
 
 getJoinRulesR :: Handler Html
 getJoinRulesR = do

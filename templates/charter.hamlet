@@ -1,0 +1,8 @@
+<div .col-md-12>
+  <div .article-content>
+    <div .row .rules-header>
+      <div .col-md-4>
+        <h1>FREE AWAY — Формация Пробуждения!
+        <p>Вырвись на свободу!..<br/>Сбросив все оковы!..<br/>Видишь, как свободен?..<br/>Сбрось теперь СВОБОДУ!!!
+      <div .col-md-8 .rules-header-image>
+        <img src="/static/rules.jpg">
