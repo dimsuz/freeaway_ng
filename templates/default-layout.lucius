@@ -215,4 +215,13 @@ body {
         height: auto;
     }
 
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+
+    a:hover {
+        color: #d86a2c;
+        text-decoration: underline;
+    }
 }
